@@ -48,11 +48,21 @@ namespace glslcTool
                 si.UseShellExecute = false;
                 si.RedirectStandardOutput = true;
                 si.RedirectStandardError = true;
+                si.WorkingDirectory = Application.StartupPath;
                 prc.StartInfo = si;
                 prc.Start();
 
-                debugCube.AppendText(prc.StandardOutput.ReadToEnd());
-                debugCube.AppendText(prc.StandardError.ReadToEnd());
+                try
+                {
+
+                    debugCube.AppendText(prc.StandardOutput.ReadToEnd());
+                    debugCube.AppendText(prc.StandardError.ReadToEnd());
+
+                }
+                catch (Exception)
+                {
+
+                }
 
                 prc.WaitForExit();
 
