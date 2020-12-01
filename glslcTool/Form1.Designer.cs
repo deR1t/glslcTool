@@ -145,6 +145,7 @@
             "vertex",
             "fragment",
             "tesseval",
+            "tesscontrol",
             "geometry",
             "compute"});
             this.bstage.Location = new System.Drawing.Point(70, 64);
